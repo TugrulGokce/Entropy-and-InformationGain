@@ -229,7 +229,7 @@ def entropy_calculate(dataframe, column_name):
             entropy += -(math.log(p_of_val, 2) * p_of_val)
             
             #eger bir kolondaki unique degerlerin hepsi icin entropy hesapladiysa diziye ekle
-            if i == len_of_cdata - 1: # eger hesaplama bitmediyse for da donmeye devam et
+            if (i == len_of_cdata - 1) and (entropy not in entropy_list): # eger hesaplama bitmediyse for da donmeye devam et
                 entropy_list.append(entropy)
     else:
         raise Exception("Sadece kategorik verilerin entropisi hesaplanır.")
